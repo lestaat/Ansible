@@ -1,0 +1,17 @@
+---
+- hosts: "{{ target }}"
+  gather_facts: false
+  remote_user: some_user
+  become: no
+
+  tasks:
+  - name: execute arbitrary command
+    command: "{{ cmd }}"
+    register: mesg
+
+    args:
+       chdir: "{{ dir }}"
+
+  - debug: msg="{{ mesg.stdout }}"
+  - debug: msg="{{ mesg.stderr }}"
+
