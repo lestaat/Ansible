@@ -3,7 +3,7 @@
 # __autor__ = MatiasSp
 
 import base64
-from lib.ansclient import AnsApiClient
+from ansclient import AnsApiClient
 
 class Enum(object):
     ansible_connection = ('ssh', 'local')
